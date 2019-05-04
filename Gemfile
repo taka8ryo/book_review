@@ -17,6 +17,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.3.6'
   gem 'rspec-rails', '~> 3.6.0'
+  gem 'rubocop-airbnb'
 end
 
 group :development do
