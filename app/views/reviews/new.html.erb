@@ -1,2 +1,23 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="container">
+  <h1>レビューを投稿</h1>
+  <div class="title">
+    <p>書籍情報を取得</p>
+    <div class="form-group", id="get-book">
+      <input id="isbn" type="text", name="isbn", class="form-control", placeholder="ISBNを入力してください", id="isbn">
+    </div>
+    <div class="form-submit">
+      <button type="submit", id="getBookInfo", class="btn btn-primary">検索</button>
+    </div>
+    <div claass="result-image">
+      <%= bootstrap_form_for(@review, id:"form-result") do |f| %>
+      <div><p id="image"></div>
+
+        <%= f.text_field :title, label: "タイトル", id: "title", placeholder: "タイトル" %>
+        <%= f.text_field :image, id:"cover" %>
+        <%= f.text_field :author, label: "著者", id: "author", placeholder: "著者" %>
+        <%= f.text_field :description, label: "説明", id: "description", placeholder: "説明" %>
+        <%= f.text_field :review, label: "レビューを入力", id: "review", placeholder: "レビューを入力" %>
+        <%= f.submit "投稿", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
