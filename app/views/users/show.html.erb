@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%=current_user.name%>のレビュー</h1>
-  <div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3" style="max-width: 600px;">
     <div class="row no-gutters">
       <% @reviews.each do |review| %>
         <div class="col-md-4">
@@ -10,9 +10,11 @@
           <div class="card-body">
             <h5 class="card-title"><%= review.title %></h5>
             <p class="card-text"><%= review.author %></p>
-            <p class="card-text"><%= link_to review.user.name, "#" %> <%= review.created_at.strftime('%Y/%m/%d') %></p>
+            <p class="card-text"><%= link_to review.user.name, review.user %> <%= review.created_at.strftime('%Y/%m/%d') %></p>
             <p class="card-text"><%= review.review %></p>
+            <% if current_user == review.user %>
             <p class="card-text"><%= link_to "削除", review, method: :delete, data: { confirm: "削除しますか？" } %> <%= link_to "編集", edit_review_path(review.id) %></p>
+            <% end %>
           </div>
         </div>
       <% end %>
