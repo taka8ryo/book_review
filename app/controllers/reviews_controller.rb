@@ -24,6 +24,19 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @review = current_user.review.find(params[:id])
     @review.destroy

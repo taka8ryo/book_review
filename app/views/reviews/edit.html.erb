@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>レビューを編集</h1>
+      <%= bootstrap_form_for(@review, id:"form-result") do |f| %>
+        <%= f.text_field :review, label: "レビューを入力", id: "review", placeholder: "レビューを入力" %>
+        <%= f.submit "投稿", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+    <%= link_to "戻る", @review.user %>
+  </div>
