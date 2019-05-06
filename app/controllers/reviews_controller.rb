@@ -27,8 +27,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = current_user.review.find(params[:id])
     @review.destroy
-    flash[:sucess] = "削除しました"
-    redirect_to root_url
+    redirect_to request.referrer || root_url
   end
 
   private

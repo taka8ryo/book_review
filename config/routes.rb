@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'pages#index'
   get  'pages/show'
   resources :reviews
+  resources :users
 end
