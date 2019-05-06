@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user! only: [:new, :show, :destroy]
+  before_action :authenticate_user!, only: [:create, :show, :destroy]
   def index
   end
 
