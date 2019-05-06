@@ -1,4 +1,5 @@
-<div class="container">
+<<% provide(:title, "編集") %>
+  div class="container">
   <h1>レビューを編集</h1>
       <%= bootstrap_form_for(@review, id:"form-result") do |f| %>
         <%= f.text_field :review, label: "レビューを入力", id: "review", placeholder: "レビューを入力" %>
