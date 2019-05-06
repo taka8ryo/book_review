@@ -1,24 +1,9 @@
-# README
+<h1>本のレビューを投稿できるアプリです</h1>
+<p>https://book-review-94.herokuapp.com/</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+</h1>実装した機能</h1>
+<ul> 
+  <li>deviseを利用したログイン機能</li>
+  <li>openBDAPIを利用した書籍検索機能</li>
+  <li>rubocop</li>
+ </ul>
