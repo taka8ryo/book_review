@@ -1,0 +1,11 @@
+<div class="col-md-4">
+  <img src="<%= review.image %>" class="card-img" alt="image">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+    <h5 class="card-title"><%= review.title %></h5>
+    <p class="card-text"><%= review.author %></p>
+    <p class="card-text"><%= link_to review.user.name, "#" %> <%= review.created_at.strftime('%Y/%m/%d') %></p>
+    <p class="card-text"><%= review.review %></p>
+  </div>
+</div>

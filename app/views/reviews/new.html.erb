@@ -10,12 +10,12 @@
     </div>
     <div claass="result-image">
       <%= bootstrap_form_for(@review, id:"form-result") do |f| %>
-      <div><p id="image"></div>
-
+      <div>
+        <p id="image"></p>
+    </div>
         <%= f.text_field :title, label: "タイトル", id: "title", placeholder: "タイトル" %>
-        <%= f.text_field :image, id:"cover" %>
         <%= f.text_field :author, label: "著者", id: "author", placeholder: "著者" %>
-        <%= f.text_field :description, label: "説明", id: "description", placeholder: "説明" %>
+        <%= f.text_field :image, label: "image_url", id:"cover" %>
         <%= f.text_field :review, label: "レビューを入力", id: "review", placeholder: "レビューを入力" %>
         <%= f.submit "投稿", class:"btn btn-primary" %>
       <% end %>
