@@ -1,19 +1,35 @@
 <% provide(:title, "レビュー詳細") %>
 <div class="container">
-  <div class="card mb-3 border-dark" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="<%= @review.image %>" class="card-img" alt="...">
+  <div class="main_section">
+    <div id="article" class="article">
+      <div id="signage">
+        <h1 class="title"><%= @review.title %></h1>
+        <div class="bottom cf">
+          <div class="right txt">
+            <span class="author"><%= link_to @review.user.name, @review.user %></span>
+            <span class="publish_at"><%= @review.created_at.strftime('%Y/%m/%d') %></span>
+          </div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= @review.title %></h5>
-          <p class="card-text"><%= @review.author %></p>
-          <p class="card-text"><%= @review.review %></p>
-          <p class="card-text"><small class="text-muted"><%= @review.created_at %> by <%= link_to @review.user.name, @review.user %></small></p>
-          <% if current_user == @review.user %>
-          <p class="card-text"><%= link_to "削除", @review, method: :delete, data: { confirm: "削除しますか？" } %> <%= link_to "編集", edit_review_path(@review.id) %></p>
-          <% end %>
+      <div class="matin-section">
+        <div id="list_content" class="section_list list_basic">
+          <div class="body">
+            <ul>
+              <li class="num">
+                <div class="img book">
+                  <img src="<%= @review.image %>" alt="image" width="100">
+                </div>
+                <div class="txt">
+                  <div class="detail">
+                    <h4><%= @review.title %></h4>
+                    <span class="author_text"><%= @review.author %></span>
+                    <p><%= @review.description %></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p class="review"><%= @review.review %></p>
+          </div>
         </div>
       </div>
     </div>
