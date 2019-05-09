@@ -1,9 +1,32 @@
-<div class="container">
-  <p>おすすめの本を共有しよう</p>
-  <h1>おすすめ本レビュー</h1>
-  <div class="card mb-3 border-secondary" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <%= render @reviews %>
+<div class="matin-section">
+  <div id="article" class="article">
+    <div id="signage" class="section project">
+      <h1 class="title has_icon" style>
+        <img src="assets/title-icon.png" alt="おすすめ本のレビュー" width="100">
+        おすすめ本のレビュー
+      </h1>
+  </div>
+  <div id="list_content" class="section_list list_basic">
+    <div class="body">
+      <ul>
+        <li class="num">
+        <% @reviews.each do |review| %>
+          <div class="img book">
+            <img src="<%= review.image %>" alt="image" width="100">
+          </div>
+          <div class="txt">
+            <h4 class="title a_rv">
+              <%= link_to review.title, review_path(review) %>
+            </h4>
+            <div class="bottom">
+              <span class="author_text"><%= link_to review.user.name, review.user %></span>
+              <span class="date"><%= review.created_at.strftime('%Y/%m/%d') %></span>
+            </div>
+            <p class="review"><%= review.review %></p>
+          </div>
+        <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

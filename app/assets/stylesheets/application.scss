@@ -18,3 +18,53 @@
   padding: 10px 0;
   border-top: 4px solid #777272;
 }
+
+
+#signage .has_icon {
+  margin: 30px;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+#signage .title {
+  color: #fff;
+  font-size: 142.86%;
+  line-height: 1.2;
+  background-color: #BDBEC2;
+}
+
+ul {
+  list-style: none;
+}
+
+.list_basic .body li {
+  border-bottom: 3px solid #d7d7dd;
+  margin-top: 20px;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.section_list .book {
+  border: 1px solid #c7c7cc;
+}
+
+.a_rv a {
+  color: #000;
+}
+.bottom {
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.list_basic .body li .book {
+  float: left;
+  border-bottom: 1px solid #c7c7cc;
+}
+
+.list_basic .body li .txt {
+  width: 484px;
+  margin-left: 130px;
+  margin-bottom: 80px;
+}
