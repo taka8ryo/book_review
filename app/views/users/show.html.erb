@@ -1,24 +1,36 @@
-<% provide(:title, @user.name) %>
 <div class="container">
-  <h1><%=current_user.name%>のレビュー</h1>
-  <div class="card mb-3" style="max-width: 600px;">
-    <div class="row no-gutters">
-      <% @reviews.each do |review| %>
-        <div class="col-md-4">
-          <img src="<%= review.image %>" class="card-img" alt="image">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= review.title %></h5>
-            <p class="card-text"><%= review.author %></p>
-            <p class="card-text"><%= link_to review.user.name, review.user %> <%= review.created_at.strftime('%Y/%m/%d') %></p>
-            <p class="card-text"><%= review.review %></p>
-            <% if current_user == review.user %>
-            <p class="card-text"><%= link_to "削除", review, method: :delete, data: { confirm: "削除しますか？" } %> <%= link_to "編集", edit_review_path(review.id) %></p>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+  <div class="matin-section">
+    <div id="article" class="article">
+      <div id="signage" class="section project">
+        <h1 class="title has_icon" style>
+          <%=current_user.name%>のレビュー
+        </h1>
+    </div>
+    <div id="list_content" class="section_list list_basic">
+      <div class="body">
+        <ul>
+          <li class="num">
+          <% @reviews.each do |review| %>
+            <div class="img book">
+              <img src="<%= review.image %>" alt="image" width="100">
+            </div>
+            <div class="txt">
+              <h4 class="title a_rv">
+                <%= link_to review.title, review_path(review) %>
+              </h4>
+              <div class="bottom">
+                <span class="author_text"><%= link_to review.user.name, review.user %></span>
+                <span class="date"><%= review.created_at.strftime('%Y/%m/%d') %></span>
+                <% if current_user == review.user %>
+                  <p><%= link_to "削除", review, method: :delete, data: { confirm: "削除しますか？" } %> <%= link_to "編集", edit_review_path(review.id) %></p>
+                <% end %>
+              </div>
+              <p class="review"><%= review.review %></p>
+            </div>
+          <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
